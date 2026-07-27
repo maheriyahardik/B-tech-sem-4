@@ -1,0 +1,8 @@
+LXI H, 2000H     ; Load address 2000H
+MOV A, M         ; Load first number into A
+INX H            ; Point to 2001H
+STC              ; Set carry (previous borrow)
+SBB M            ; A = A - M - Borrow
+INX H            ; Point to 2002H
+MOV M, A         ; Store result
+HLT              ; Stop
